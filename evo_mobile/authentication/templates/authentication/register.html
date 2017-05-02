@@ -1,0 +1,164 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Register new account - Evo</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="register-box">
+      <img src="/static/images/logo-evo.jpg" alt="evo logo" class="login-logo">
+
+      <div class="text-center form-title-medium">Sign Up</div>
+
+      <form class="form-horizontal register-form" data-toggle="validator" action="/account/create" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="first_name">First Name</label>
+          <div class="col-sm-9">
+            <input type="text" name="first_name" class="form-control" id="first_name" placeholder="Enter first name" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="last_name">Last Name</label>
+          <div class="col-sm-9">
+            <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Enter last name" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="gender">Gender</label>
+          <div class="col-sm-9 radio-group">
+            <label for="male"><input type="radio" id="male" name="gender" value="Male" required>  Male</label>
+            <label for="female"><input type="radio" id="female" name="gender" value="Female" required>  Female</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="phone">Phone Number</label>
+          <div class="col-sm-9">
+            <div class="input-group">
+              <div class="input-group-addon">+62</div>
+              <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter phone number" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3 fg-label" for="dob">Date of Birth</label>
+          <div class="col-sm-9">
+            <input type="text" name="dob" data-provide="datepicker" class="form-control" id="dob" placeholder="Pick the date" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3 fg-label" for="identifier">Identity Number</label>
+          <div class="col-sm-9">
+            <input type="text" name="identifier" class="form-control" id="identifier" placeholder="KTP/Paspor/etc" required>
+          </div>
+        </div>
+
+        <hr class="seperator-small">
+
+        <div class="form-group">
+          <label class="control-label col-sm-3 fg-label" for="address">Address</label>
+          <div class="col-sm-9">
+            <textarea type="text" class="form-control" id="address" placeholder="Enter address"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3 fg-label" for="country">Country</label>
+          <div class="col-sm-9">
+            <select class="form-control" id="country" name="country">
+                <option value="Indonesia">Indonesia</option> 
+              </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3 fg-label" for="province">Province</label>
+          <div class="col-sm-9">
+            <select class="form-control" id="province" name="province">
+                  <option value="Indonesia">Jakarta</option> 
+                  <option value="Malaysia">Bandung</option> 
+                  <option value="Singapore">Surabaya</option> 
+                  <option value="Cambodia">Semarang</option> 
+                  <option value="Phillipines">Bali</option> 
+                  <option value="Thailand">NTT</option> 
+                  <option value="Brunei Daarusalam">Tangerang</option> 
+              </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3 fg-label" for="city">City</label>
+          <div class="col-sm-9">
+            <select class="form-control" id="city" name="city">
+                  <option value="Indonesia">Jakarta Selatan</option> 
+                  <option value="Malaysia">Jakarta Barat</option> 
+                  <option value="Singapore">Jakarta Timur</option> 
+                  <option value="Cambodia">Jakarta Pusat</option> 
+                  <option value="Phillipines">Jakarta Utara</option> 
+                  <option value="Thailand">Kepulauan Seribu</option>
+              </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3 fg-label" for="postal">Postal Code</label>
+          <div class="col-sm-9">
+            <input type="text" name="zipcode" class="form-control" id="postal" placeholder="Enter postal code">
+          </div>
+        </div>
+
+        <hr class="seperator-small">
+
+        <div class="form-group">
+          <label class="control-label col-sm-3 fg-label" for="email">E-Mail</label>
+          <div class="col-sm-9">
+            <input type="email" name="email" class="form-control" id="email" placeholder="Enter e-mail" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3 fg-label" for="password">Password</label>
+          <div class="col-sm-9">
+            <input type="password" name="password" class="form-control" id="password" placeholder="Enter password" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-3 fg-label" for="confpassword" style="font-size: 0.9em">Confirm Password</label>
+          <div class="col-sm-9">
+            <input type="password" name="confirmation" class="form-control" id="confpassword" placeholder="Enter confirm password" data-match="#password" required>
+          </div>
+        </div>
+
+        <input type="checkbox" id="agree" value="agree">
+        <span>I agree with the <a href="">terms and condition</a></span>
+
+        <button type="submit" class="btn btn-primary signup-btn mt-15">Sign Up</button>
+      </form>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="copyright">Create by Evo 2017</div>
+  </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+</body>
+
+</html>

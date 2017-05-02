@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Evo - Login</title>
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+
+        <img src="/static/images/logo-evo.jpg" alt="evo logo" class="login-logo">
+
+        {% if messages %}
+        <div class="alert alert-danger text-center">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <form action="/auth" method="post" class="login-form mt-20">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="email text-center">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+          </div>
+          <button type="submit" class="btn btn-primary signin-btn">Sign In</button>
+          <div class="text-center mt-15"><a>Forgot Password?</a></div>
+          <div class="text-center mt-15">Don't have an account? <a href="/signup">Sign Up</a></div>
+        </form>
+
+    </div>
+  </div>
+</body>
+</html>

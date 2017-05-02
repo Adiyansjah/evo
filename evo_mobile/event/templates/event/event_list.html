@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Event List - EVO</title>
+</head>
+
+<body>
+
+  {% include 'evo_mobile/sidebar.html' %}
+
+  <div class="container" id="container">
+
+    <!-- Header -->
+    <div class="row">
+      <div class="header clearfix">
+        <div class="pull-left menu-container">
+          <ul class="menu">
+            <li><a href="#" id="toggle-btn"><i class="fa fa-bars"></i></a></li>
+            <li><a href="/"><i class="fa fa-home"></i></a></li>
+          </ul>
+        </div>
+        <div class="pull-right main-logo">
+          <img class="logo" src="/static/images/logo-evo.jpg" alt="evo-logo">
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <!-- Main Search -->
+      <div class="col-md-12 main-search">
+        <form action="/events">
+        <select class="form-control category-select" name="category">
+          <option value="All">All</option>
+          {% for category in categories %}
+          <option value="{{ category.name }}">{{ category.name }}</option>
+          {% endfor %}
+        </select>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" name="name">
+          <span class="input-group-btn">
+          <button class="btn btn-default" id="search" type="submit">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+          </span>
+        </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="row">
+
+      <div class="col-md-12 event-box clearfix">
+
+        {% for event in events %}
+        <div class="event-box-content event-box-border">
+          <div class="event-box-fig">
+            <img src="{{ event.thumbnail.url }}" alt="event-fig">
+          </div>
+          <div class="event-box-details">
+            <div class="event-category">{{ event.category }}</div>
+            <div class="event-title">{{ event.name }}</div>
+            <div class="event-date">{{ event.start_date|date:'j F Y' }}</div>
+            <div class="event-price">Start from Rp {{ event.minimum_price|floatformat }}</div>
+          </div>
+          <a href="{% url 'event-detail' event.id %}" class="event-btn">Find more</a>
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <nav aria-label="Page Navigator">
+        {% if events.has_previous %}
+        <ul class="pager">
+          <li><a href="{{ page_url.prev }}">Prev</a></li>
+        </ul>
+        {% endif %}
+        {% if events.has_next %}
+        <ul class="pager">
+          <li><a href="{{ page_url.next }}">Next</a></li>
+        </ul>
+        {% endif %}
+      </nav>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="copyright">Create by Evo 2017</div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="/static/sidebar.js"></script>
+</body>
+
+</html>

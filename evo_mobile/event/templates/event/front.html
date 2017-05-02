@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Home - EVO</title>
+</head>
+<body>
+
+  {% include 'evo_mobile/sidebar.html' %}
+  
+  <div class="container" id="container">
+
+    <!-- Header -->
+    <div class="row">
+      <div class="header clearfix">
+        <div class="pull-left menu-container">
+          <ul class="menu">
+            <li><a href="#" id="toggle-btn"><i class="fa fa-bars"></i></a></li>
+            <li><a href="#"><i class="fa fa-home"></i></a></li>
+          </ul>
+        </div>
+        <div class="pull-right main-logo">
+          <img class="logo" src="/static/images/logo-evo.jpg" alt="evo-logo">
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <!-- Main Search -->
+      <div class="col-md-12 main-search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search">
+          <span class="input-group-btn">
+          <button class="btn btn-default" id="search">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+          </span>
+        </div>
+      </div>
+      <!-- Main Slider -->
+      <div class="col-md-12 main-slider">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="item active">
+              <img src="/static/images/event1.jpg" alt="Event1">
+            </div>
+            <div class="item">
+              <img src="/static/images/event2.jpg" alt="Event2">
+            </div>
+            <div class="item">
+              <img src="/static/images/event3.jpg" alt="Event3">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="row">
+
+      <div class="col-md-4 event-box clearfix">
+        <div class="event-box-content">
+          <div class="event-box-title"><i class="glyphicon glyphicon-fire red"></i> Hot Deal!</div>
+          <div class="event-box-fig">
+            <img src="/static/images/hotdeals.jpg" alt="event-fig">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 event-box clearfix">
+        <div class="event-box-content">
+          <div class="event-box-title"><i class="glyphicon glyphicon-star yellow"></i> Hot Event!</div>
+          <div class="event-box-fig">
+            <img src="/static/images/hotevent.jpg" alt="event-fig">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 event-box clearfix">
+        <div class="event-box-content">
+          <div class="event-box-title"><i class="glyphicon glyphicon-play"></i> Ads</div>
+          <div class="event-box-fig">
+            <img src="/static/images/hotdeals.jpg" alt="event-fig">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <div class="copyright">Create by Evo 2017</div>
+    </footer>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="/static/sidebar.js"></script>
+</body>
+
+</html>

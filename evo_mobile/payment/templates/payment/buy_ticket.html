@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Event List - EVO</title>
+</head>
+
+<body>
+
+  <div class="sidebar" style="display: none" id="sidebar">
+    <a class="menu-collapse-btn" id="menu-btn"><i class="fa fa-bars"></i> Menu</a>
+    <div class="sidebar-header">
+      Hello, Yessika
+    </div>
+    <div class="sidebar-content">
+      <ul class="navigations">
+        <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="/events"><i class="fa fa-lightbulb-o"></i> Events</a></li>
+        <li><a href="#"><i class="fa fa-shopping-cart"></i> My Tickets</a></li>
+        <li><a href="#"><i class="fa fa-calendar"></i> Calendar</a></li>
+        <li><a href="#"><i class="fa fa-comment"></i> Reviews</a></li>
+        <li><a href="/promotions"><i class="fa fa-smile-o"></i> Promotions and Deals</a></li>
+        <li><a href="#"><i class="fa fa-usd"></i> Sells Your Ticket</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container" id="container">
+
+    <!-- Header -->
+    <div class="row">
+      <div class="header clearfix">
+        <div class="pull-left menu-container">
+          <ul class="menu">
+            <li><a href="#" id="toggle-btn"><i class="fa fa-bars"></i></a></li>
+            <li><a href="/"><i class="fa fa-home"></i></a></li>
+          </ul>
+        </div>
+        <div class="pull-right main-logo">
+          <img class="logo" src="/static/images/logo-evo.jpg" alt="evo-logo">
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Content -->
+    <div class="row buy-ticket-container">
+
+      <form class="buy-ticket-form" action="">
+      
+        <div class="row ticket-option">
+          <div class="col-xs-6 ticket-name">Regular Ticket</div>
+          <div class="col-xs-6 ticket-price">Rp. 300.000
+            <select name="ticket" id="ticket">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div class="col-xs-10 ticket-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, esse.</div>
+        </div>
+        
+        <div class="row ticket-option">
+          <div class="col-xs-6 ticket-name">VIP Ticket</div>
+          <div class="col-xs-6 ticket-price">Rp. 1.600.000
+            <select name="ticket" id="ticket">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div class="col-xs-10 ticket-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, esse.</div>
+        </div>
+
+        <div class="row ticket-option">
+          <div class="col-xs-6 ticket-name">VVIP Ticket</div>
+          <div class="col-xs-6 ticket-price">Rp. 2.600.000
+            <select name="ticket" id="ticket">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div class="col-xs-10 ticket-description">Lorem ipsum dolor sit amet, consectetur.</div>
+        </div>
+
+        <div class="row total-ticket">
+          <div class="col-xs-6">Total</div>
+          <div class="col-xs-6">Rp. 1.900.000</div>
+        </div>
+
+        <button class="btn btn-primary next-btn" type="submit">Next</button>
+      </form>
+
+
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="copyright">Create by Evo 2017</div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="/static/sidebar.js"></script>
+</body>
+
+</html>

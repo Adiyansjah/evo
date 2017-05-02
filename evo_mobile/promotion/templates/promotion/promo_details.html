@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <title>Event List - EVO</title>
+</head>
+
+<body>
+
+  {% include 'evo_mobile/sidebar.html' %}
+  
+  <div class="container" id="container">
+
+    <!-- Header -->
+    {% include 'evo_mobile/header.html' %}
+
+    <!-- Content -->
+    <div class="row">
+
+      <div class="col-md-12 promotion-box clearfix">
+        <div class="promotion-box-content promotion-box-border">
+          <div class="promotion-box-fig">
+            <img src="{{ promotion.thumbnail.url }}" alt="promotion-fig">
+          </div>
+          <div class="promotion-box-details">
+            <div class="promotion-title"><i class="fa fa-calendar"></i>&nbsp; Until {{ promotion.expired|date:'j F Y' }}</div>
+            <div class="promotion-sub-title">Description</div>
+            <div class="promotion-description">{{ promotion.description }}</div>
+            <div class="promotion-terms">* Syarat dan ketentuan</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="copyright">Create by Evo 2017</div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="/static/sidebar.js"></script>
+</body>
+
+</html>
