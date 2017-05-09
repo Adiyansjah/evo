@@ -17,6 +17,14 @@
 
       <div class="text-center form-title-medium">Sign Up</div>
 
+      {% if messages %}
+        <div class="alert alert-danger text-center">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
+      {% endif %}
+
       <form class="form-horizontal register-form" data-toggle="validator" action="/account/create" method="post">
         {% csrf_token %}
 
@@ -71,7 +79,7 @@
         <div class="form-group">
           <label class="control-label col-sm-3 fg-label" for="address">Address</label>
           <div class="col-sm-9">
-            <textarea type="text" class="form-control" id="address" placeholder="Enter address"></textarea>
+            <textarea type="text" name="address" class="form-control" id="address" placeholder="Enter address"></textarea>
           </div>
         </div>
 

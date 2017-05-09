@@ -31,14 +31,21 @@ class Event(models.Model):
         return self.name
 
     def minimum_price(self):
-        price = self.ticket_set.aggregate(models.Min('price'))
+        price = self.tickets.aggregate(models.Min('price'))
         return price['price__min']
 
         
 class Ticket(models.Model):
     name = models.CharField(max_length=255)
     price = models.FloatField()
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='tickets')
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    name = models.CharField(max_length=255)
+    rate = models.IntegerField()
+    comment = models.TextField()
+    event = models.IntegerField()

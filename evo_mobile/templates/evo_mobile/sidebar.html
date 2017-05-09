@@ -1,17 +1,17 @@
 <div class="sidebar" style="display: none" id="sidebar">
   <a class="menu-collapse-btn" href="#" id="menu-btn"><i class="fa fa-bars"></i> Menu</a>
   <div class="sidebar-header">
-    Hello, Yessika
+    Hello, {{request.user.first_name}}
   </div>
   <div class="sidebar-content">
     <ul class="navigations">
       <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
       <li><a href="/events"><i class="fa fa-lightbulb-o"></i> Events</a></li>
-      <li><a href="#"><i class="fa fa-shopping-cart"></i> My Tickets</a></li>
+      <li><a href="/my_ticket"><i class="fa fa-shopping-cart"></i> My Tickets</a></li>
       <li><a href="/calendar"><i class="fa fa-calendar"></i> Calendar</a></li>
-      <li><a href="#"><i class="fa fa-comment"></i> Reviews</a></li>
+      <li><a href="/reviews"><i class="fa fa-comment"></i> Reviews</a></li>
       <li><a href="/promotions"><i class="fa fa-smile-o"></i> Promotions and Deals</a></li>
-      <li><a href="#"><i class="fa fa-usd"></i> Sells Your Ticket</a></li>
+      <li><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
     </ul>
   </div>
 </div>

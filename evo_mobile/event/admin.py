@@ -7,8 +7,8 @@ class TicketInline(admin.TabularInline):
     model = Ticket
 
 class EventAdmin(admin.ModelAdmin):
+    list_display = ('name', 'start_date', 'end_date', 'category')
     inlines = [TicketInline]
 
 admin.site.register(Category)
 admin.site.register(Event, EventAdmin)
-admin.site.register(Ticket)

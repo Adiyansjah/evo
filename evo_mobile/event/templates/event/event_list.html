@@ -60,7 +60,7 @@
     <div class="row">
 
       <div class="col-md-12 event-box clearfix">
-
+        {% load humanize %}
         {% for event in events %}
         <div class="event-box-content event-box-border">
           <div class="event-box-fig">
@@ -70,7 +70,7 @@
             <div class="event-category">{{ event.category }}</div>
             <div class="event-title">{{ event.name }}</div>
             <div class="event-date">{{ event.start_date|date:'j F Y' }}</div>
-            <div class="event-price">Start from Rp {{ event.minimum_price|floatformat }}</div>
+            <div class="event-price">Start from Rp {{ event.minimum_price|floatformat|intcomma }}</div>
           </div>
           <a href="{% url 'event-detail' event.id %}" class="event-btn">Find more</a>
         </div>

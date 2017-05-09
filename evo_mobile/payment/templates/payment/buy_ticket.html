@@ -13,23 +13,7 @@
 
 <body>
 
-  <div class="sidebar" style="display: none" id="sidebar">
-    <a class="menu-collapse-btn" id="menu-btn"><i class="fa fa-bars"></i> Menu</a>
-    <div class="sidebar-header">
-      Hello, Yessika
-    </div>
-    <div class="sidebar-content">
-      <ul class="navigations">
-        <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="/events"><i class="fa fa-lightbulb-o"></i> Events</a></li>
-        <li><a href="#"><i class="fa fa-shopping-cart"></i> My Tickets</a></li>
-        <li><a href="#"><i class="fa fa-calendar"></i> Calendar</a></li>
-        <li><a href="#"><i class="fa fa-comment"></i> Reviews</a></li>
-        <li><a href="/promotions"><i class="fa fa-smile-o"></i> Promotions and Deals</a></li>
-        <li><a href="#"><i class="fa fa-usd"></i> Sells Your Ticket</a></li>
-      </ul>
-    </div>
-  </div>
+  {% include 'evo_mobile/sidebar.html' %}
 
   <div class="container" id="container">
 
@@ -53,48 +37,25 @@
     <!-- Content -->
     <div class="row buy-ticket-container">
 
-      <form class="buy-ticket-form" action="">
-      
-        <div class="row ticket-option">
-          <div class="col-xs-6 ticket-name">Regular Ticket</div>
-          <div class="col-xs-6 ticket-price">Rp. 300.000
-            <select name="ticket" id="ticket">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
+      <form class="buy-ticket-form" action="/receipt" method="post">
+        {% csrf_token %}
+        {% load humanize %}
+        <input type="hidden" name="event" value="{{ event }}">
+        {% for ticket in tickets %}
+        <div class="row ticket-option"> 
+          <div class="col-xs-6 ticket-name">{{ ticket.name }} Ticket</div>
+          <div class="col-xs-6 ticket-price">Rp. {{ ticket.price|floatformat|intcomma }}
+            <select name="ticket[]" id="ticket">
+              <option value="{{ticket.id}}-0">0</option>
+              <option value="{{ticket.id}}-1">1</option>
+              <option value="{{ticket.id}}-2">2</option>
+              <option value="{{ticket.id}}-3">3</option>
+              <option value="{{ticket.id}}-4">4</option>
             </select>
           </div>
           <div class="col-xs-10 ticket-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, esse.</div>
         </div>
-        
-        <div class="row ticket-option">
-          <div class="col-xs-6 ticket-name">VIP Ticket</div>
-          <div class="col-xs-6 ticket-price">Rp. 1.600.000
-            <select name="ticket" id="ticket">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </div>
-          <div class="col-xs-10 ticket-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, esse.</div>
-        </div>
-
-        <div class="row ticket-option">
-          <div class="col-xs-6 ticket-name">VVIP Ticket</div>
-          <div class="col-xs-6 ticket-price">Rp. 2.600.000
-            <select name="ticket" id="ticket">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-            </select>
-          </div>
-          <div class="col-xs-10 ticket-description">Lorem ipsum dolor sit amet, consectetur.</div>
-        </div>
-
-        <div class="row total-ticket">
-          <div class="col-xs-6">Total</div>
-          <div class="col-xs-6">Rp. 1.900.000</div>
-        </div>
+        {% endfor %}
 
         <button class="btn btn-primary next-btn" type="submit">Next</button>
       </form>

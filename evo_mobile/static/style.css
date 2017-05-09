@@ -490,3 +490,36 @@ ul.navigations li a i {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+.payment-field {
+    margin: 10px 0;
+}
+
+.payment-field img {
+    width: 100px;
+}
+
+.payment-order {
+    margin-top: 20px;
+}
+
+.payment-msg {
+    font-size: 12px;
+}
+
+.payment-agree {
+    color: red;
+    font-size: 11px;
+    margin-top: 14px;
+    text-align: center;
+}
+
+.comment-response {
+    border: 1px solid #f5f5f5;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.comment-response > .comments {
+    margin-top: 10px
+}
